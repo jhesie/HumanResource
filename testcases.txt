@@ -1,0 +1,25 @@
+
+
+
+$sql = "SELECT c.LogId, m.Firstname as Firstname, m.Lastname as Lastname, c.TimeIn,c.TimeOut FROM employee m inner JOIN tbl_employeelog c ON m.EmpID = c.UserId;";
+                          $result = $conn-> query($sql);
+                        
+                              while($row = mysqli_fetch_array($result))
+                              {
+                               
+                                echo '<tr>'
+                                    .'<td class="text-center">'.$row['LogId'].'</td>'
+                                    .'<td>'.$row['Firstname'].'</td>'
+                                    .'<td>'.$row['Lastname'].'</td>'
+                                    .'<td>'.$row['TimeIn'].'</td>'
+                                    .'<td>'.$row['TimeOut'].'</td>'
+                                    .'<td>'
+                                        .'<a href="Details.php?Empl='.$row['LogId'].'" class="fas fa-eye" >Details</a>&nbsp;&nbsp;&nbsp;<a href="Employee.php?del='.$row['LogId'].'" class="fas fa-trash-alt" >Employee</a> &nbsp;&nbsp;&nbsp;<a href="UpdateEmployee.php?del='.$row['LogId'].'" class="fas fa-pen-alt" >Update</a> '
+                                     
+                                      .'</td>'
+                                    .'</tr>';  
+                          
+                              } 
+
+
+                        
