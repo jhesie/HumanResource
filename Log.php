@@ -47,7 +47,7 @@
 				$sql = "SELECT c.LogId, m.Firstname as Firstname, m.Lastname as Lastname, c.TimeIn,c.TimeOut FROM employee m inner JOIN tbl_employeelog c ON m.EmpID = c.UserId WHERE (Convert(c.TimeIn,Date)  BETWEEN '$SDate' and '$EDate') and m.Firstname = '$selEmp'";
             $result = $conn-> query($sql);
 	
-			while($row = mysqli_fetch_array($result))
+			while($row = mysqli_fetch_array($result)) 
 				{
 					echo '<tr>'
 					.'<td>'.$row['Firstname'].'</td>'
